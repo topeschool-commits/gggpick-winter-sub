@@ -12,6 +12,6 @@ layout: "categories"
 </div>
 <!-- 추가 작업 끝 -->
 
-Welcome to the **GGG Finds Category Directory**. 
+Welcome to the **GGG PICK Category Directory**. 
 
 We have organized our extensive product reviews, top 10 lists, and buying guides into easy-to-navigate categories. Whether you are searching for cutting-edge technology, upgrading your home, or looking for the perfect gift, you'll find the best coupang deals and recommendations right here.
