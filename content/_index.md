@@ -1,5 +1,5 @@
 ---
-title: "The Best coupang Finds & Deals"
+title: "The Best Coupang Pick & Deals"
 description: "Discover top-rated coupang products, daily deals, and expert buying guides curated by GGG PICK."
 layout: "index"
 ---
