@@ -1,22 +1,22 @@
 {
     "domain": "winter.gggpick.com",
     "categories": [
-        "기저귀/위생",
-        "수유/이유식",
-        "심신안정/수면"
+        "방한화 및 부츠",
+        "발열 내의",
+        "방한 소품"
     ],
     "category_details": {
-        "기저귀/위생": {
-            "topic": "Diaper bags, wet wipe cases, diaper disposal bins.",
-            "role": "Parenting essential guide recommending top-rated Coupang winter items."
+        "방한화 및 부츠": {
+            "topic": "Winter boots, fleece-lined shoes, snow boots.",
+            "role": "Winter footwear expert."
         },
-        "수유/이유식": {
-            "topic": "winter bottle sterilizers, winter food makers, high chairs.",
-            "role": "Infant nutrition marketing expert providing premium childcare product comparisons."
+        "발열 내의": {
+            "topic": "Thermal underwear, heated vests, winter socks.",
+            "role": "Cold weather apparel guide."
         },
-        "심신안정/수면": {
-            "topic": "Pacifiers, bouncers, sleep sound machines.",
-            "role": "Sleep training specialist selecting products with high-rated real reviews from parents."
+        "방한 소품": {
+            "topic": "Hand warmers, earmuffs, winter gloves, scarves.",
+            "role": "Winter accessories reviewer."
         }
     }
 }
