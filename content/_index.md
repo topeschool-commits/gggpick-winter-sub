@@ -1,6 +1,6 @@
 ---
-title: "The Best Amazon Finds & Deals"
-description: "Discover top-rated Amazon products, daily deals, and expert buying guides curated by GGG Finds."
+title: "The Best coupang Finds & Deals"
+description: "Discover top-rated coupang products, daily deals, and expert buying guides curated by GGG Finds."
 layout: "index"
 ---
 
@@ -11,6 +11,6 @@ layout: "index"
 </div>
 <!-- 추가 작업 끝 -->
 
-Welcome to **GGG Finds**, your ultimate destination for discovering the best products on Amazon. We scour the marketplace to bring you honest reviews, top 10 lists, and unbeatable daily deals across tech, home, lifestyle, and more.
+Welcome to **GGG Finds**, your ultimate destination for discovering the best products on coupang. We scour the marketplace to bring you honest reviews, top 10 lists, and unbeatable daily deals across tech, home, lifestyle, and more.
 
 Explore our expertly curated categories below to find exactly what you're looking for, or dive into our latest guides to discover your next must-have item.

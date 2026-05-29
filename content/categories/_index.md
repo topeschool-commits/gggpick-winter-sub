@@ -1,7 +1,7 @@
 ---
 title: "Explore All Product Categories"
 date: 2026-04-25T09:30:00+09:00
-description: "Browse our expertly curated categories. From the latest tech gadgets to essential home goods, find exactly what you need on Amazon."
+description: "Browse our expertly curated categories. From the latest tech gadgets to essential home goods, find exactly what you need on coupang."
 layout: "categories"
 ---
 
@@ -14,4 +14,4 @@ layout: "categories"
 
 Welcome to the **GGG Finds Category Directory**. 
 
-We have organized our extensive product reviews, top 10 lists, and buying guides into easy-to-navigate categories. Whether you are searching for cutting-edge technology, upgrading your home, or looking for the perfect gift, you'll find the best Amazon deals and recommendations right here.
+We have organized our extensive product reviews, top 10 lists, and buying guides into easy-to-navigate categories. Whether you are searching for cutting-edge technology, upgrading your home, or looking for the perfect gift, you'll find the best coupang deals and recommendations right here.

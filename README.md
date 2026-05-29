@@ -21,8 +21,8 @@ Open `hugo.toml` in your new repository. You must find and replace all placehold
 * `TEMPLATE_LANG` ➔ e.g., `en-us`
 * `TEMPLATE_TITLE` ➔ e.g., `GGG Pick winter`
 * `TEMPLATE_COUNTRY` ➔ e.g., `US`
-* `TEMPLATE_AMAZON_DOMAIN` ➔ e.g., `amazon.com`
-* `TEMPLATE_AMAZON_ID` ➔ Your Coupang Associate ID (e.g., `gggpick-20`)
+* `TEMPLATE_coupang_DOMAIN` ➔ e.g., `coupang.com`
+* `TEMPLATE_coupang_ID` ➔ Your Coupang Associate ID (e.g., `gggpick-20`)
 * `TEMPLATE_DESCRIPTION` ➔ A short SEO description of the sub-niche.
 * `TEMPLATE_SITENAME` ➔ e.g., `GGG Pick winter`
 

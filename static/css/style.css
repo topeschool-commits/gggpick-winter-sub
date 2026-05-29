@@ -8,10 +8,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-    /* Amazon-Inspired Brand Palette */
-    --brand-dark: #232f3e;        /* Amazon Dark Navy */
-    --brand-accent: #c45500;      /* Amazon Orange (CTR Focused) */
-    --brand-blue: #007185;        /* Amazon Link Blue */
+    /* coupang-Inspired Brand Palette */
+    --brand-dark: #232f3e;        /* coupang Dark Navy */
+    --brand-accent: #c45500;      /* coupang Orange (CTR Focused) */
+    --brand-blue: #007185;        /* coupang Link Blue */
     
     --bg-white: #ffffff;
     --bg-light: #f8f9fa;

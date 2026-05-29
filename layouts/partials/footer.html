@@ -27,7 +27,7 @@
     }
 
     .footer-link:hover {
-        color: #c45500; /* 아마존 오렌지 포인트 */
+        color: #c45500; /* 쿠팡 오렌지 포인트 */
         text-decoration: underline;
     }
 
@@ -45,8 +45,8 @@
         color: #333;
     }
 
-    /* 🛡️ 아마존 정책 준수 선언문 스타일 */
-    .amazon-disclaimer {
+    /* 🛡️ 쿠팡 정책 준수 선언문 스타일 */
+    .coupang-disclaimer {
         font-size: 0.85rem;
         color: #666; /* 빨간색 대신 차분하고 전문적인 톤으로 변경 */
         margin-bottom: 15px;
@@ -85,8 +85,8 @@
             {{/* 🎯 Copyright: 스마트 자동 연도 업데이트 적용 */}}
             <p class="copyright">&copy; {{ now.Format "2006" }} <strong>{{ .Site.Title }}</strong>. 모든 권리 보유.</p>
             
-            {{/* 🛡️ Amazon Associate Disclaimer: 아마존 공식 규정 준수 (필수 문구) */}}
-            <p class="amazon-disclaimer">
+            {{/* 🛡️ coupang Associate Disclaimer: 쿠팡 공식 규정 준수 (필수 문구) */}}
+            <p class="coupang-disclaimer">
                 이 포스팅은 쿠팡 파트너스 활동의 일환으로, {{ .Site.Title }} 이에 따른 일정액의 수수료를 제공받을 수 있습니다.
             </p>
             

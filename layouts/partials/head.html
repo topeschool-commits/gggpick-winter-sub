@@ -11,7 +11,7 @@
 {{- $siteName := .Site.Title -}}
 {{- $firstLetter := substr $siteName 0 1 -}}
 {{- $brandColor := .Site.Params.brandColor | default "#232f3e" -}}
-{{- $description := .Description | default .Site.Params.description | default "Discover the best products, daily deals, and expert buying guides on Amazon." -}}
+{{- $description := .Description | default .Site.Params.description | default "Discover the best products, daily deals, and expert buying guides on coupang." -}}
 
 {{/* 🎯 SEO Title Optimization: Uses pipe symbol for global standards */}}
 <title>{{ if .IsHome }}{{ $siteName }} | {{ $description }}{{ else }}{{ .Title | replace ":" "-" }} | {{ $siteName }}{{ end }}</title>
@@ -54,7 +54,7 @@
     }
     .article-content img { max-width: 100%; height: auto; border-radius: 12px; margin: 30px 0; }
     
-    /* 🎯 Navigation Hover: Amazon Orange (#c45500) */
+    /* 🎯 Navigation Hover: coupang Orange (#c45500) */
     .nav-link:hover { color: #c45500 !important; }
     .active-menu { color: #c45500 !important; font-weight: 800; }
 </style>
