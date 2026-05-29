@@ -1,5 +1,5 @@
 # ==========================================
-# 🤖 GGG Finds Empire - Search Engine Protocol
+# 🤖 GGG PICK Empire - Search Engine Protocol
 # ==========================================
 
 User-agent: *
@@ -12,5 +12,4 @@ Disallow: /scripts/
 Disallow: /data/
 
 # 🗺️ Global Sitemap Redirection
-# Note: The 'TEMPLATE_DOMAIN' will be replaced by your commander script or manual setup.
-Sitemap: https://TEMPLATE_DOMAIN/sitemap.xml
+Sitemap: https://winter.gggpick.com/sitemap.xml
