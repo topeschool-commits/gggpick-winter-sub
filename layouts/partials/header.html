@@ -1,0 +1,162 @@
+<style>
+    /* 🎯 헤더 전체 컨테이너: 상단 고정 및 그림자 효과 */
+    .site-header {
+        background-color: #ffffff;
+        border-bottom: 3px solid #232f3e; /* 아마존 다크 네이비 라인 */
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        font-family: 'Inter', -apple-system, sans-serif;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 75px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* 🎯 로고 스타일: 묵직하고 신뢰감 있는 폰트 */
+    .site-logo {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        white-space: nowrap; /* 🚨 로고가 두 줄로 깨지는 것 방지 */
+    }
+
+    .logo-text {
+        font-size: 1.3rem; /* 🚨 1.5rem에서 살짝 줄여 여백 확보 */
+        font-weight: 900;
+        color: #111;
+        letter-spacing: -0.5px;
+        transition: color 0.3s ease;
+    }
+
+    .logo-text:hover {
+        color: #c45500; /* 아마존 오렌지 포인트 */
+    }
+
+    /* 🎯 내비게이션: 간결한 수평 배치 */
+    .site-nav {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        flex-wrap: nowrap; /* 🚨 메뉴가 아래로 떨어지지 않게 강제 1줄 정렬 */
+        overflow-x: auto; /* 창이 너무 좁아지면 좌우 스크롤 허용 */
+        scrollbar-width: none; /* 스크롤바 숨김 */
+    }
+    .site-nav::-webkit-scrollbar { display: none; }
+
+    .nav-link {
+        text-decoration: none;
+        color: #444;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: color 0.2s ease;
+        position: relative;
+        padding: 5px 0;
+        text-transform: uppercase; /* 쇼핑몰 특유의 대문자 메뉴 */
+        letter-spacing: 0.5px;
+        white-space: nowrap; /* 🚨 메뉴 글자 줄바꿈 방지 */
+    }
+
+    /* 🎯 동적 카테고리 전용 스타일 */
+    .niche-link {
+        color: #777 !important; 
+        font-weight: 500 !important;
+        font-size: 0.95rem !important;
+        text-transform: capitalize !important; /* 부드러운 대소문자 유지 */
+    }
+
+    /* 🎯 호버 및 액티브 시 아마존 오렌지 포인트 적용 */
+    .nav-link:hover, .niche-link:hover {
+        color: #c45500 !important;
+    }
+
+    .nav-link.active-menu {
+        color: #c45500;
+    }
+
+    .nav-link.active-menu::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #c45500;
+        border-radius: 2px;
+    }
+
+    /* 📱 모바일 최적화 */
+    @media (max-width: 768px) {
+        .header-container {
+            height: auto;
+            padding: 15px 20px;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .logo-text {
+            font-size: 1.2rem;
+            white-space: normal; /* 모바일에서는 제목이 길면 줄바꿈 허용 */
+            text-align: center;
+        }
+        .site-nav {
+            justify-content: flex-start;
+            width: 100%;
+            gap: 15px;
+            padding-bottom: 5px;
+        }
+        .nav-link {
+            font-size: 0.9rem;
+        }
+        .niche-link {
+            display: none; /* 모바일에서는 서브 메뉴 숨김 처리 (깔끔함 유지) */
+        }
+    }
+</style>
+
+<header class="site-header">
+    <div class="container header-container">
+        
+        {{/* 🎯 수술 1: "GGG Finds - " 강제 제거 */}}
+        <a href="/" class="site-logo">
+            <span class="logo-text">
+                {{ replace .Site.Title "GGG Finds - " "" }}
+            </span>
+        </a>
+
+        {{/* 🎯 메뉴 섹션 */}}
+        <nav class="site-nav">
+            {{ $currentPage := . }}
+            
+            {{/* 1. hugo.toml의 고정 메뉴 출력 */}}
+            {{ range .Site.Menus.main }}
+                {{/* 🎯 수술 2: "PICKS" 메뉴 자동 삭제 */}}
+                {{ if ne (upper .Name) "PICKS" }}
+                    {{ $active := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+                    
+                    <a href="{{ .URL | relURL }}" 
+                       class="nav-link {{ if $active }}active-menu{{ end }}"
+                       {{ if strings.HasPrefix .URL "http" }}target="_blank" rel="nofollow"{{ end }}>
+                        {{ .Name }}
+                    </a>
+                {{ end }}
+            {{ end }}
+
+            {{/* 2. 사령탑이 쏴주는 niches.json 기반 동적 카테고리 출력 */}}
+            {{ if .Site.Data.niches.categories }}
+                {{ range .Site.Data.niches.categories }}
+                    <a href="/categories/{{ . | urlize }}/" class="nav-link niche-link">
+                        {{/* 🎯 수술 3: 앞의 '#' 기호 제거 */}}
+                        {{ . | replaceRE "-" " " | title }}
+                    </a>
+                {{ end }}
+            {{ end }}
+        </nav>
+    </div>
+</header>

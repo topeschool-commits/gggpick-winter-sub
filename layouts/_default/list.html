@@ -1,0 +1,85 @@
+{{ define "main" }}
+<style>
+    body { background-color: #f8f9fa !important; }
+    .list-page-wrapper { padding: 40px 20px 0px; } 
+    .page-header-centered { text-align: center; margin-bottom: 50px; }
+    
+    /* 🎯 헤더 타이틀을 사이트 파라미터에서 가져옵니다 (E-E-A-T 강화) */
+    .page-header-centered h1 { font-size: 2.5rem; color: #111; font-weight: 900; margin-bottom: 15px; letter-spacing: -0.5px; text-transform: capitalize; }
+    .page-header-centered p { color: #555; font-size: 1.1rem; margin: 0; }
+    
+    .post-cards-container { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 25px; }
+    
+    /* 🎯 영미권 쇼핑 리뷰 사이트 스타일의 깔끔한 카드 디자인 */
+    .post-card { 
+        background: #ffffff; 
+        border-radius: 16px; 
+        padding: 35px 40px; 
+        box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
+        text-decoration: none; 
+        display: block; 
+        transition: transform 0.2s ease, box-shadow 0.2s ease; 
+        border: 1px solid rgba(0,0,0,0.05); 
+    }
+    .post-card:hover { 
+        transform: translateY(-3px); 
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08); 
+    }
+    
+    /* 🎯 아마존 오렌지 컬러로 카테고리 강조 */
+    .card-category { color: #c45500; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: block; }
+    
+    .card-title { font-size: 1.5rem; font-weight: 800; color: #007185; margin: 0 0 12px 0; line-height: 1.35; }
+    .post-card:hover .card-title { color: #c45500; }
+    
+    .card-summary { color: #444; font-size: 1.05rem; line-height: 1.6; margin: 0; }
+    
+    @media (max-width: 768px) { 
+        .post-card { padding: 25px; } 
+        .page-header-centered h1 { font-size: 2rem; } 
+        .card-title { font-size: 1.3rem; } 
+        .card-summary { font-size: 1rem; } 
+    }
+</style>
+
+<div class="list-page-wrapper">
+    <div class="page-header-centered">
+        {{/* 🎯 동적 타이틀: 카테고리 페이지면 해당 이름을, 아니면 사이트 기본 제목을 출력 */}}
+        <h1>{{ if .IsHome }}Latest Guides & Reviews{{ else }}{{ replace .Title "-" " " }}{{ end }}</h1>
+        <p>Expert insights, honest reviews, and the best deals curated just for you.</p>
+    </div>
+
+    <div class="post-cards-container">
+        {{/* 🎯 핵심 수술: '현재 페이지 문맥(.Pages)'에 맞는 글만 가져오도록 변경 */}}
+        {{ $paginator := .Paginate .Pages 20 }}
+        
+        {{ range $paginator.Pages }}
+        <a href="{{ .Permalink }}" class="post-card">
+            <span class="card-category">
+                {{ if .Params.categories }}
+                    {{ index .Params.categories 0 | replaceRE "-" " " | title }}
+                {{ else if .Params.tags }}
+                    {{ index .Params.tags 0 | title }}
+                {{ else }}
+                    TOP PICKS
+                {{ end }}
+            </span>
+            
+            <h2 class="card-title">{{ replace .Title ":" "-" }}</h2>
+            
+            <p class="card-summary">
+                {{ if .Description }}
+                    {{ .Description }}
+                {{ else }}
+                    {{ .Summary | plainify | truncate 150 }}
+                {{ end }}
+            </p>
+        </a>
+        {{ end }}
+    </div>
+    
+    <div class="pagination-area" style="margin-top: 40px; margin-bottom: 20px;">
+        {{ partial "pagination.html" . }}
+    </div>
+</div>
+{{ end }}

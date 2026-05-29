@@ -1,0 +1,17 @@
+{{/* 🎯 GGG Finds Empire: Automated Internal Linking System */}}
+<div class="recommended-container" style="margin: 50px 0; padding: 35px; background-color: #fffcf5; border-radius: 15px; border: 2px dashed #ff9900; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+    <p style="margin: 0 0 20px 0; font-size: 1.3rem; font-weight: 900; color: #232f3e;">🔗 Recommended Finds</p>
+    <ul style="margin: 0; padding: 0; list-style: none;">
+        {{/* 🚀 Fetch top 5 latest posts from the same section, excluding the current post */}}
+        {{ $currentID := .File.UniqueID }}
+        {{ $section := .Section }}
+        {{ range first 5 (where (where .Site.RegularPages "Section" $section) "File.UniqueID" "!=" $currentID) }}
+        <li style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px dashed #ddd;">
+            <a href="{{ .RelPermalink }}" style="color: #007185; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: 0.2s;" onmouseover="this.style.color='#c45500'; this.style.textDecoration='underline';" onmouseout="this.style.color='#007185'; this.style.textDecoration='none';">
+                {{/* Replace colons with hyphens for clean output */}}
+                {{ .Title | replace ":" "-" }}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</div>

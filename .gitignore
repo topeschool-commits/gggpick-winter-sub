@@ -1,0 +1,7 @@
+service_account.json
+nohup.out
+.DS_Store
+__pycache__/
+
+# 새로운 구글 클라우드 마스터키 패턴 방어
+serene-mender-*.json

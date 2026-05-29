@@ -1,0 +1,82 @@
+# =========================================================
+# 🚀 [GGG Pick] 쿠팡 제국 마스터 제어반 (최종 무결점본)
+# =========================================================
+
+# 1. 사이트 기본 식별 정보
+baseURL = 'https://winter.gggpick.com/'
+languageCode = 'ko-kr'
+title = 'GGG Pick Baby'
+
+[params]
+  # 2. 쿠팡 파트너스 전용 데이터
+  target_country = "KR"
+  coupang_id = "AF7460738"
+  
+  mainSections = ["posts"]
+  homepage_sections = ["posts"]
+  
+  # 3. 사이트 설명 및 브랜딩
+  description = 'Baby 관련 전문가 리뷰와 쿠팡 최저가 완벽 가이드.'
+  brandColor = "#1a1c2c"
+
+  # (공통) 애드센스 정보 및 메타 데이터
+  googleAdsenseId = "ca-pub-8982396795153735" 
+  author = 'Commander'
+  env = 'production'
+
+  # 🚨 사이트 식별 정보
+  sitename = "GGG Pick Baby"
+  siteurl = "https://winter.gggpick.com"
+  startdate = "2026-03-31"
+  contactemail = "contact@gggpick.com"
+  affiliatetype = "Coupang Partners, Google AdSense"
+
+# 4. 상단 메뉴 설정 (동적 카테고리 시스템 최적화)
+[[menu.main]]
+  name = "홈"
+  # 🚨 사령관님의 전용 수익 창출 링크 장착 완료!
+  url = "https://link.coupang.com/a/eCjhp9" 
+  weight = 1
+    
+[[menu.main]]
+  name = "Picks"
+  url = "/posts/"
+  weight = 10
+
+# =========================================================
+# ⚙️ [절대 보존 구역] 시스템 코어 엔진
+# =========================================================
+[pagination]
+  pagerSize = 20
+
+hasCJKLanguage = true
+buildFuture = true
+buildDrafts = true
+disableKinds = ["RSS", "sitemap"]
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[permalinks]
+  posts = "/:filename/"
+  categories = "/categories/:slug/" 
+  
+[related]
+  includeNewer = true
+  threshold = 0
+  toLower = true
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+  [[related.indices]]
+    name = "categories"
+    weight = 50
+  [[related.indices]]
+    name = "date"
+    weight = 10
