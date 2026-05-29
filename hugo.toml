@@ -5,7 +5,7 @@
 # 1. 사이트 기본 식별 정보
 baseURL = 'https://winter.gggpick.com/'
 languageCode = 'ko-kr'
-title = 'GGG Pick Baby'
+title = 'GGG Pick winter'
 
 [params]
   # 2. 쿠팡 파트너스 전용 데이터
@@ -16,7 +16,7 @@ title = 'GGG Pick Baby'
   homepage_sections = ["posts"]
   
   # 3. 사이트 설명 및 브랜딩
-  description = 'Baby 관련 전문가 리뷰와 쿠팡 최저가 완벽 가이드.'
+  description = 'winter 관련 전문가 리뷰와 쿠팡 최저가 완벽 가이드.'
   brandColor = "#1a1c2c"
 
   # (공통) 애드센스 정보 및 메타 데이터
@@ -25,7 +25,7 @@ title = 'GGG Pick Baby'
   env = 'production'
 
   # 🚨 사이트 식별 정보
-  sitename = "GGG Pick Baby"
+  sitename = "GGG Pick winter"
   siteurl = "https://winter.gggpick.com"
   startdate = "2026-03-31"
   contactemail = "contact@gggpick.com"

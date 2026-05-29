@@ -2,29 +2,29 @@
 
 **Global Coupang Affiliate & Shopping Curation Hub**
 
-This repository serves as the foundational "Master Template" (built with Hugo) for deploying new sub-domains within the `gggpick.com` ecosystem. It is heavily optimized for Coupang Associates, Google AdSense, babynical SEO, and blazing-fast serverless deployment via Cloudflare Pages.
+This repository serves as the foundational "Master Template" (built with Hugo) for deploying new sub-domains within the `gggpick.com` ecosystem. It is heavily optimized for Coupang Associates, Google AdSense, winternical SEO, and blazing-fast serverless deployment via Cloudflare Pages.
 
 ---
 
 ## 🚀 Deployment Protocol (How to Launch a New Territory)
 
-Do **NOT** modify the core HTML/CSS files in this template unless deploying a global design update. To launch a new site (e.g., `baby.gggpick.com`), follow these exact steps:
+Do **NOT** modify the core HTML/CSS files in this template unless deploying a global design update. To launch a new site (e.g., `winter.gggpick.com`), follow these exact steps:
 
 ### Step 1: Clone the Base
-Copy all files from this `master-template` folder into a new, empty GitHub repository (e.g., `gggfinds-baby-sub`).
+Copy all files from this `master-template` folder into a new, empty GitHub repository (e.g., `gggfinds-winter-sub`).
 
 ### Step 2: Configure `hugo.toml` (Crucial)
 Open `hugo.toml` in your new repository. You must find and replace all placeholder variables starting with `TEMPLATE_`. 
 
 **Required Replacements:**
-* `TEMPLATE_DOMAIN` ➔ e.g., `baby.gggpick.com`
+* `TEMPLATE_DOMAIN` ➔ e.g., `winter.gggpick.com`
 * `TEMPLATE_LANG` ➔ e.g., `en-us`
-* `TEMPLATE_TITLE` ➔ e.g., `GGG Pick Baby`
+* `TEMPLATE_TITLE` ➔ e.g., `GGG Pick winter`
 * `TEMPLATE_COUNTRY` ➔ e.g., `US`
 * `TEMPLATE_AMAZON_DOMAIN` ➔ e.g., `amazon.com`
 * `TEMPLATE_AMAZON_ID` ➔ Your Coupang Associate ID (e.g., `gggpick-20`)
 * `TEMPLATE_DESCRIPTION` ➔ A short SEO description of the sub-niche.
-* `TEMPLATE_SITENAME` ➔ e.g., `GGG Pick Baby`
+* `TEMPLATE_SITENAME` ➔ e.g., `GGG Pick winter`
 
 ### Step 3: Deploy
 Connect your new GitHub repository to **Cloudflare Pages**. 
