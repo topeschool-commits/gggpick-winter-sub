@@ -1,15 +1,3 @@
-# ==========================================
-# 🤖 GGG PICK Empire - Search Engine Protocol
-# ==========================================
-
 User-agent: *
 Allow: /
-
-# 🚫 Block access to sensitive system directories
-Disallow: /bin/
-Disallow: /config/
-Disallow: /scripts/
-Disallow: /data/
-
-# 🗺️ Global Sitemap Redirection
 Sitemap: https://winter.gggpick.com/sitemap.xml
