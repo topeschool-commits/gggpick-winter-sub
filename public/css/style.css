@@ -1,0 +1,172 @@
+/* GGG PICK Master Template - Global CSS
+   Logic: Variables -> Base -> Header -> Cards -> Article -> Components -> Footer
+*/
+
+/* -------------------------------------------------------------------------- */
+/* 1. GLOBAL VARIABLES & FONTS                                                */
+/* -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    /* coupang-Inspired Brand Palette */
+    --brand-dark: #232f3e;        /* coupang Dark Navy */
+    --brand-accent: #c45500;      /* coupang Orange (CTR Focused) */
+    --brand-blue: #007185;        /* coupang Link Blue */
+    
+    --bg-white: #ffffff;
+    --bg-light: #f8f9fa;
+    
+    --text-main: #111111;         /* Deep black for readability */
+    --text-body: #333333;
+    --text-muted: #666666;
+    
+    --border-light: #eaeaeb;
+    --border-dashed: #ff9900;
+    
+    /* Layout Specs */
+    --max-width: 1100px;
+    --article-width: 850px;
+    --card-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    
+    --font-global: 'Inter', -apple-system, sans-serif;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. BASE LAYOUT                                                             */
+/* -------------------------------------------------------------------------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-global);
+    line-height: 1.6;
+    color: var(--text-body);
+    background: var(--bg-white);
+    -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+
+main { padding: 40px 0 60px; min-height: 70vh; background-color: var(--bg-light); }
+
+/* Standard Links */
+a { color: var(--brand-blue); text-decoration: none; transition: 0.2s; }
+a:hover { color: var(--brand-accent); text-decoration: underline; }
+
+/* -------------------------------------------------------------------------- */
+/* 3. HEADER & NAVIGATION                                                     */
+/* -------------------------------------------------------------------------- */
+.site-header {
+    background-color: var(--bg-white) !important; 
+    border-bottom: 3px solid var(--brand-dark); 
+    padding: 15px 0;
+    width: 100%; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.header-container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.logo-text {
+    color: var(--text-main) !important; 
+    font-size: 1.6rem !important; 
+    font-weight: 900 !important; 
+    letter-spacing: -0.05em !important; 
+    text-transform: uppercase;
+}
+
+.site-nav { display: flex; gap: 25px; align-items: center; }
+
+.nav-link {
+    color: var(--text-muted); 
+    font-weight: 600; 
+    font-size: 0.95rem; 
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-link:hover, .active-menu {
+    color: var(--brand-accent) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. POST CARDS (LIST VIEW)                                                  */
+/* -------------------------------------------------------------------------- */
+.post-list { list-style: none; display: flex; flex-direction: column; gap: 25px; }
+
+.post-item { 
+    background: var(--bg-white); border-radius: 16px; padding: 35px; 
+    box-shadow: var(--card-shadow); border: 1px solid var(--border-light); 
+    transition: transform 0.2s, box-shadow 0.2s; 
+}
+.post-item:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+
+.post-item-title { 
+    color: var(--brand-blue); font-size: 1.5rem; 
+    font-weight: 800; line-height: 1.35; 
+}
+.post-item:hover .post-item-title { color: var(--brand-accent); }
+
+.post-item-category { 
+    color: var(--brand-accent); font-size: 0.85rem; 
+    font-weight: 800; text-transform: uppercase; 
+    letter-spacing: 1px; display: block; margin-bottom: 10px;
+}
+
+.post-item-desc { 
+    color: var(--text-body); font-size: 1.05rem; margin-top: 10px;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; 
+    overflow: hidden; 
+}
+
+/* -------------------------------------------------------------------------- */
+/* 5. ARTICLE VIEW (SINGLE POST)                                              */
+/* -------------------------------------------------------------------------- */
+article { max-width: var(--article-width); margin: 0 auto; background: var(--bg-white); padding: 40px; border-radius: 20px; box-shadow: var(--card-shadow); }
+
+.article-title { 
+    font-size: 2.4rem; font-weight: 900; line-height: 1.3; 
+    margin-bottom: 20px; color: var(--text-main); 
+}
+
+.article-meta { margin-bottom: 30px; color: var(--text-muted); font-size: 0.95rem; font-weight: 500; }
+
+.article-content { line-height: 1.8; color: var(--text-body); font-size: 1.15rem; }
+
+article h2 { margin-top: 50px; margin-bottom: 20px; font-size: 1.8rem; border-bottom: 2px solid var(--bg-light); padding-bottom: 10px; color: var(--text-main); }
+article h3 { margin-top: 35px; margin-bottom: 15px; font-size: 1.4rem; color: var(--brand-accent); }
+
+article blockquote { 
+    border-left: 5px solid var(--brand-accent); padding: 20px; 
+    margin: 30px 0; background: var(--bg-light); border-radius: 0 10px 10px 0; 
+}
+
+article img { max-width: 100%; border-radius: 12px; margin: 30px 0; height: auto; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+
+/* -------------------------------------------------------------------------- */
+/* 6. COMPONENTS (UI ELEMENTS)                                                */
+/* -------------------------------------------------------------------------- */
+.tag-badge { 
+    color: var(--brand-accent); font-weight: 700; background: #fffcf5; 
+    padding: 4px 12px; border-radius: 50px; font-size: 0.85rem; border: 1px solid #ffe8cc;
+}
+
+/* Affiliate Disclosure Box */
+.disclaimer-box { 
+    background-color: var(--bg-light); border-left: 5px solid var(--brand-accent); 
+    padding: 25px; margin-top: 60px; border-radius: 0 12px 12px 0; 
+    font-size: 0.9rem; color: var(--text-muted); 
+}
+
+/* -------------------------------------------------------------------------- */
+/* 7. FOOTER                                                                  */
+/* -------------------------------------------------------------------------- */
+.site-footer { background: var(--bg-light); padding: 60px 0; text-align: center; border-top: 1px solid var(--border-light); }
+.footer-link { color: var(--text-muted); font-weight: 600; font-size: 0.9rem; margin: 0 15px; }
+.footer-link:hover { color: var(--brand-accent); }
+.footer-info { margin-top: 20px; font-size: 0.85rem; color: #999; }
